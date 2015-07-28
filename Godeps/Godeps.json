@@ -1,0 +1,55 @@
+{
+	"ImportPath": "github.com/anarcher/s3cli",
+	"GoVersion": "go1.4.2",
+	"Deps": [
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/aws",
+			"Comment": "v0.6.8-3-g30cf7a0",
+			"Rev": "30cf7a0aba6e61fdd6655157b74584e28e473013"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/endpoints",
+			"Comment": "v0.6.8-3-g30cf7a0",
+			"Rev": "30cf7a0aba6e61fdd6655157b74584e28e473013"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/protocol/query",
+			"Comment": "v0.6.8-3-g30cf7a0",
+			"Rev": "30cf7a0aba6e61fdd6655157b74584e28e473013"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/protocol/rest",
+			"Comment": "v0.6.8-3-g30cf7a0",
+			"Rev": "30cf7a0aba6e61fdd6655157b74584e28e473013"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/protocol/restxml",
+			"Comment": "v0.6.8-3-g30cf7a0",
+			"Rev": "30cf7a0aba6e61fdd6655157b74584e28e473013"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/protocol/xml/xmlutil",
+			"Comment": "v0.6.8-3-g30cf7a0",
+			"Rev": "30cf7a0aba6e61fdd6655157b74584e28e473013"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/internal/signer/v4",
+			"Comment": "v0.6.8-3-g30cf7a0",
+			"Rev": "30cf7a0aba6e61fdd6655157b74584e28e473013"
+		},
+		{
+			"ImportPath": "github.com/aws/aws-sdk-go/service/s3",
+			"Comment": "v0.6.8-3-g30cf7a0",
+			"Rev": "30cf7a0aba6e61fdd6655157b74584e28e473013"
+		},
+		{
+			"ImportPath": "github.com/codegangsta/cli",
+			"Comment": "1.2.0-137-gbca61c4",
+			"Rev": "bca61c476e3c752594983e4c9bcd5f62fb09f157"
+		},
+		{
+			"ImportPath": "github.com/vaughan0/go-ini",
+			"Rev": "a98ad7ee00ec53921f08832bc06ecf7fd600e6a1"
+		}
+	]
+}
