@@ -24,7 +24,7 @@ func NewDownloader(s3path *S3Path, localpath string, parallel int, manager *s3ma
 		s3path:     s3path,
 		localpath:  localpath,
 		parallel:   parallel,
-		downloadC:  make(chan string, 1),
+		downloadC:  make(chan string),
 		Downloader: manager,
 	}
 

@@ -29,6 +29,9 @@ func GetAction(c *cli.Context) {
 
 	client := s3.New(nil)
 	params := &s3.ListObjectsInput{Bucket: &s3path.Bucket, Prefix: &s3path.Prefix}
-	client.ListObjectsPages(params, d.eachPage)
+	err = client.ListObjectsPages(params, d.eachPage)
+	if err != nil {
+		log.Fatal(err)
+	}
 	d.Wait()
 }
