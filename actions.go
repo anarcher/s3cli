@@ -22,6 +22,7 @@ func GetAction(c *cli.Context) {
 		log.Fatal("get s3path localpath")
 	}
 
+	log.Printf("s3path Bucket:%v Prefix:%v", s3path.Bucket, s3path.Prefix)
 	parallel := c.Int("parallel")
 
 	manager := s3manager.NewDownloader(nil)

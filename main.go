@@ -19,7 +19,7 @@ func main() {
 			Flags: []cli.Flag{
 				cli.IntFlag{
 					Name:   "parallel,p",
-					Value:  1,
+					Value:  10,
 					EnvVar: "PARALLEL",
 				},
 			},

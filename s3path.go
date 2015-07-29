@@ -10,8 +10,8 @@ type S3Path struct {
 }
 
 func NewS3Path(path string) (*S3Path, error) {
-	path = strings.Replace(path, "s://", "", 1)
-	parts := strings.SplitAfterN(path, "/", 2)
+	path = strings.Replace(path, "s3://", "", 1)
+	parts := strings.SplitN(path, "/", 2)
 	bucket := parts[0]
 	prefix := parts[1]
 

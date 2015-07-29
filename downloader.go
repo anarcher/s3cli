@@ -36,12 +36,12 @@ func NewDownloader(s3path *S3Path, localpath string, parallel int, manager *s3ma
 	return d
 }
 
-func (d *Downloader) eachPage(page *s3.ListObjectsOutput, more bool) bool {
+func (d *Downloader) eachPage(page *s3.ListObjectsOutput, lastPage bool) bool {
 	for _, obj := range page.Contents {
 		d.downloadC <- *obj.Key
 	}
 
-	if more == false {
+	if lastPage == true {
 		close(d.downloadC)
 		return false
 	}
@@ -81,7 +81,11 @@ func (d *Downloader) downloadToFile(key string) {
 	defer fd.Close()
 
 	// Download the file using the AWS SDK
-	log.Printf("Downloading s3://%s/%s to %s...\n", d.s3path.Bucket, key, file)
-	params := &s3.GetObjectInput{Bucket: &d.s3path.Bucket, Key: &key}
-	d.Download(fd, params)
+	retry(func() error {
+		log.Printf("Downloading s3://%s/%s to %s", d.s3path.Bucket, key, file)
+		params := &s3.GetObjectInput{Bucket: &d.s3path.Bucket, Key: &key}
+		n, err := d.Download(fd, params)
+		log.Printf("Downloaded s3://%s/%s to %s size %v", d.s3path.Bucket, key, file, n)
+		return err
+	})
 }
