@@ -82,7 +82,6 @@ func (d *Downloader) downloadToFile(key string) {
 
 	// Download the file using the AWS SDK
 	retry(func() error {
-		log.Printf("Downloading s3://%s/%s to %s", d.s3path.Bucket, key, file)
 		params := &s3.GetObjectInput{Bucket: &d.s3path.Bucket, Key: &key}
 		n, err := d.Download(fd, params)
 		log.Printf("Downloaded s3://%s/%s to %s size %v", d.s3path.Bucket, key, file, n)
